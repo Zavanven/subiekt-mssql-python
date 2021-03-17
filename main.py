@@ -26,6 +26,4 @@ sql_query = pd.read_sql_query('''
 df = pd.DataFrame(sql_query)
 # Zamkniecie polaczenia
 conn.close()
-df.to_csv(os.path.join(os.getcwd(), 'produkty.csv'), index=False)
-
-
+df.to_csv(os.path.join(os.getcwd(), 'csv', 'produkty.csv'), index=False)
