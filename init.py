@@ -1,11 +1,11 @@
-from os import getenv
+from decouple import config
 import pymssql
 
 # Pobranie zmiennych srodowiskowych
-server = getenv('SERVER')
-user = getenv('USER')
-password = getenv('PASSWORD')
-database = genenv('DATABASE')
+server = config('SERVER')
+user = config('DB_USER')
+password = config('DB_PASSWORD')
+database = config('DATABASE')
 
 try:
     conn = pymssql.connect(server, user, password, database)
